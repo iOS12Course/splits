@@ -52,7 +52,16 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (tableView.frame.height - 60 ) / CGFloat(imageArray.count)
+        
+        if (UIApplication.shared.statusBarOrientation.isPortrait){
+            //DO Portrait
+              return (tableView.frame.height - 60 ) / CGFloat(imageArray.count)
+        }else{
+            //DO Landscape
+              return (tableView.frame.height - 40 ) / CGFloat(imageArray.count)
+        }
+        
+      
         
     }
     
